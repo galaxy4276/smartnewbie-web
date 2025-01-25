@@ -20,7 +20,7 @@ export default function Header() {
         </div>
       </section>
       <section>
-        <Button>
+        <Button onClick={() => window.open('https://2jdxd.channel.io/home', '_blank')}>
           문의하기
         </Button>
       </section>
