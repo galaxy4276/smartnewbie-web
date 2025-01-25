@@ -1,11 +1,9 @@
-import Layout from '@/features/layout';
 import { RecruitList } from '@/features/recruit';
 import { Button } from '@/shared/ui';
 
 export default function Home() {
   return (
-    <Layout>
-      {/* 메인 콘텐츠 */}
+    <>
       <div className="mb-12">
         <h2 className="text-3xl font-bold mb-2">
           스마트 뉴비와 함께 할<br />
@@ -21,8 +19,7 @@ export default function Home() {
         </a>
       </div>
 
-      {/* 채용 카드 섹션 */}
       <RecruitList />
-    </Layout>
+    </>
   );
 }

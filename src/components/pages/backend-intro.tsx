@@ -1,10 +1,6 @@
-'use client';
+import { ApplyButton, Skill } from "@/features/recruit";
 
-import { Skill } from "@/features/recruit";
-import { Button } from "@/shared/ui";
-import { openGoogleRecruitForm } from "@/shared/utils";
-
-export default function FrontendIntroPage() {
+export default function BackendIntroPage() {
 
   return (
     <aside className="grid grid-cols-1 gap-x-[60px] md:grid-cols-[70%_30%]">
@@ -42,34 +38,23 @@ export default function FrontendIntroPage() {
         <div className="flex items-center gap-x-2.5">
           <span className="font-bold">코어:</span>
           <div className="flex gap-x-1">
-            <Skill skillName="react" />
+            <Skill skillName="spring" />
+            <Skill skillName="nodejs" />
             <Skill skillName="typescript" />
-            <Skill skillName="nextjs" />
-            <Skill skillName="ionic" />
+            <Skill skillName="java" />
           </div>
         </div>
-        <p><span className="font-bold">상태관리:</span> Zustand, Tanstack Query, Recoil</p>
         <div className="flex items-center gap-x-2.5">
-          <span className="font-bold">스타일링:</span>
+          <span className="font-bold">데이터베이스 관리 및 개발:</span>
           <div className="flex gap-x-1">
-            <Skill skillName="emotion" />
-            <Skill skillName="tailwindcss" />
+            <Skill skillName="postgresql" />
+            <Skill skillName="mongo" />
+            <Skill skillName="redis" />
+            <Skill skillName="hibernate" />
+            <Skill skillName="prisma" />
           </div>
         </div>
 
-        <div className="flex items-center gap-x-2.5">
-          <span className="font-bold">패키지 매니저:</span>
-          <div className="flex gap-x-1">
-            <Skill skillName="yarn" />
-          </div>
-        </div>
-        <div className="flex items-center gap-x-2.5">
-          <span className="font-bold">빌드:</span>
-          <div className="flex gap-x-1">
-            <Skill skillName="swc" />
-            <Skill skillName="vite" />
-          </div>
-        </div>
         <div className="flex items-center gap-x-2.5">
           <span className="font-bold">CI/CD:</span>
           <div className="flex gap-x-1">
@@ -80,9 +65,11 @@ export default function FrontendIntroPage() {
         <div className="flex items-center gap-x-2.5">
           <span className="font-bold">테스트:</span>
           <div className="flex gap-x-1">
-            <Skill skillName="storybook" />
-            <Skill skillName="testing-library" />
-            <Skill skillName="msw" />
+            <span>JUnit,</span>
+            <span>Mockito,</span>
+            <span>Jest,</span>
+            <span>Postman,</span>
+            <span>Swagger</span>
           </div>
         </div>  
 
@@ -102,14 +89,12 @@ export default function FrontendIntroPage() {
       <h2 className="text-2xl font-bold mb-4">함류하면 함께 할 업무에요</h2>
       <ul className="list-disc list-inside space-y-2 text-gray-700">
         <li>고객에게 수주받은 신규 제품을 개발하거나 유지보수해요.</li>
-        <li>개발팀 내 디자인시스템을 개발하고 문서화해요.</li>
+        <li>데이터베이스 쿼리를 최적화하고 서버 자원을 관리해요.</li>
         <li>자체 솔루션의 신규 기능을 개발하고 유지보수해요.</li>
       </ul>
     </section>
     </article>
-      <Button onClick={openGoogleRecruitForm} className="min-w-[230px]" size="lg">
-        지원하기
-      </Button>
+    <ApplyButton />
     </aside>
   );
 }

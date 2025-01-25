@@ -77,209 +77,173 @@ type ItemReturns = {
   name: string;
 }
 
-const getElement = (name: SkillType): ItemReturns => {
-  switch (name) {
-    case "react":
-      return {
-        element: <React />,
-        link: 'https://react.dev/',
-        name: 'React',
-      }
-    case "typescript":
-      return {
-        element: <TypeScript />,
-        link: 'https://www.typescriptlang.org/',
-        name: 'TypeScript',
-      }
-    case "java":
-      return {
-        element: <Java />,
-        link: 'https://www.java.com/',
-        name: 'Java',
-      }
-    case "confluence":
-      return {
-        element: <Confluence />,
-        link: 'https://www.atlassian.com/software/confluence',
-        name: 'Confluence',
-      }
-    case "fastify":
-      return {
-        element: <Fastify />,
-        link: 'https://fastify.io/',
-        name: 'Fastify',
-      }
-    case "hibernate":
-      return {
-        element: <Hibernate />,
-        link: 'https://hibernate.org/',
-        name: 'Hibernate',
-      }
-    case "jira":
-      return {
-        element: <Jira />,
-        link: 'https://www.atlassian.com/software/jira',
-        name: 'Jira',
-      }
-    case "nodejs":
-      return {
-        element: <NodeJS />,
-        link: 'https://nodejs.org/',
-        name: 'Node.js',
-      }
-    case "notion":
-      return {
-        element: <Notion />,
-        link: 'https://www.notion.so/',
-        name: 'Notion',
-      }
-    case "postgresql":
-      return {
-        element: <PostgreSQL />,
-        link: 'https://www.postgresql.org/',
-        name: 'PostgreSQL',
-      }
-    case "redis":
-      return {
-        element: <Redis />,
-        link: 'https://redis.io/',
-        name: 'Redis',
-      }
-    case "slack":
-      return {
-        element: <Slack />,
-        link: 'https://slack.com/',
-        name: 'Slack',
-      }
-    case "spring":
-      return {
-        element: <Spring />,
-        link: 'https://spring.io/',
-        name: 'Spring',
-      }
-    case "testing-library":
-      return {
-        element: <TestingLibrary />,
-        link: 'https://testing-library.com/',
-        name: 'Testing Library',
-      }
-    case "prisma":
-      return {
-        element: <Prisma />,
-        link: 'https://www.prisma.io/',
-        name: 'Prisma',
-      }
-    case "docker":
-      return {
-        element: <Docker />,
-        link: 'https://www.docker.com/',
-        name: 'Docker',
-      }
-    case "ionic":
-      return {
-        element: <Ionic />,
-        link: 'https://ionicframework.com/',
-        name: 'Ionic',
-      }
-    case "nextjs":
-      return {
-        element: <NextJS />,
-        link: 'https://nextjs.org/',
-        name: 'Next.js',
-      }
-    case "aws":
-      return {
-        element: <AWS />,
-        link: 'https://aws.amazon.com/',
-        name: 'AWS',
-      }
-    case "instagram":
-      return {
-        element: <Instagram />,
-        link: 'https://www.instagram.com/',
-        name: 'Instagram',
-      }
-    case "msw":
-      return {
-        element: <MSW />,
-        link: 'https://mswjs.io/',
-        name: 'MSW',
-      }
-    case "storybook":
-      return {
-        element: <Storybook />,
-        link: 'https://storybook.js.org/',
-        name: 'Storybook',
-      }
-    case "swc":
-      return {
-        element: <SWC />,
-        link: 'https://swc.rs/',
-        name: 'SWC',
-      }
-    case "emotion":
-      return {
-        element: <Emotion />,
-        link: 'https://emotion.sh/',
-        name: 'Emotion',
-      }
-    case "tailwindcss":
-      return {
-        element: <TailwindCSS />,
-        link: 'https://tailwindcss.com/',
-        name: 'TailwindCSS',
-      }
-    case "vite":
-      return {
-        element: <Vite />,
-        link: 'https://vite.dev/',
-        name: 'Vite',
-      }
-    case "yarn":
-      return {
-        element: <Yarn />,
-        link: 'https://yarnpkg.com/',
-        name: 'Yarn',
-      }
-    case "actions":
-      return {
-        element: <GithubAction />,
-        link: 'https://docs.github.com/ko/actions',
-        name: 'Github Action',
-      }
-    case "jenkins":
-      return {
-        element: <Jenkins />,
-        link: 'https://www.jenkins.io/',
-        name: 'Jenkins',
-      }
-    case "mongo":
-      return {
-        element: <Mongo />,
-        link: 'https://www.mongodb.com/ko-kr',
-        name: 'MongoDB',
-      }
-    default:
-      throw new Error("no item");
+const elements: Record<SkillType, ItemReturns> = {
+  react: {
+    element: <React />,
+    link: 'https://react.dev/',
+    name: 'React',
+  },
+  typescript: {
+    element: <TypeScript />,
+    link: 'https://www.typescriptlang.org/',
+    name: 'TypeScript',
+  },
+  java: {
+    element: <Java />,
+    link: 'https://www.java.com/',
+    name: 'Java',
+  },
+  confluence: {
+    element: <Confluence />,
+    link: 'https://www.atlassian.com/software/confluence',
+    name: 'Confluence',
+  },
+  fastify: {
+    element: <Fastify />,
+    link: 'https://fastify.io/',
+    name: 'Fastify',
+  },
+  hibernate: {
+    element: <Hibernate />,
+    link: 'https://hibernate.org/',
+    name: 'Hibernate',
+  },
+  jira: {
+    element: <Jira />,
+    link: 'https://www.atlassian.com/software/jira',
+    name: 'Jira',
+  },
+  nodejs: {
+    element: <NodeJS />,
+    link: 'https://nodejs.org/',
+    name: 'Node.js',
+  },
+  notion: {
+    element: <Notion />,
+    link: 'https://www.notion.so/',
+    name: 'Notion',
+  },
+  postgresql: {
+    element: <PostgreSQL />,
+    link: 'https://www.postgresql.org/',
+    name: 'PostgreSQL',
+  },
+  redis: {
+    element: <Redis />,
+    link: 'https://redis.io/',
+    name: 'Redis',
+  },
+  slack: {
+    element: <Slack />,
+    link: 'https://slack.com/',
+    name: 'Slack',
+  },
+  spring: {
+    element: <Spring />,
+    link: 'https://spring.io/',
+    name: 'Spring',
+  },
+  'testing-library': {
+    element: <TestingLibrary />,
+    link: 'https://testing-library.com/',
+    name: 'Testing Library',
+  },
+  prisma: {
+    element: <Prisma />,
+    link: 'https://www.prisma.io/',
+    name: 'Prisma',
+  },
+  docker: {
+    element: <Docker />,
+    link: 'https://www.docker.com/',
+    name: 'Docker',
+  },
+  ionic: {
+    element: <Ionic />,
+    link: 'https://ionicframework.com/',
+    name: 'Ionic',
+  },
+  nextjs: {
+    element: <NextJS />,
+    link: 'https://nextjs.org/',
+    name: 'Next.js',
+  },
+  aws: {
+    element: <AWS />,
+    link: 'https://aws.amazon.com/',
+    name: 'AWS',
+  },
+  instagram: {
+    element: <Instagram />,
+    link: 'https://www.instagram.com/',
+    name: 'Instagram',
+  },
+  msw: {
+    element: <MSW />,
+    link: 'https://mswjs.io/',
+    name: 'MSW',
+  },
+  storybook: {
+    element: <Storybook />,
+    link: 'https://storybook.js.org/',
+    name: 'Storybook',
+  },
+  swc: {
+    element: <SWC />,
+    link: 'https://swc.rs/',
+    name: 'SWC',
+  },
+  emotion: {
+    element: <Emotion />,
+    link: 'https://emotion.sh/',
+    name: 'Emotion',
+  },
+  tailwindcss: {
+    element: <TailwindCSS />,
+    link: 'https://tailwindcss.com/',
+    name: 'TailwindCSS',
+  },
+  vite: {
+    element: <Vite />,
+    link: 'https://vite.dev/',
+    name: 'Vite',
+  },
+  yarn: {
+    element: <Yarn />,
+    link: 'https://yarnpkg.com/',
+    name: 'Yarn',
+  },
+  actions: {
+    element: <GithubAction />,
+    link: 'https://docs.github.com/ko/actions',
+    name: 'Github Action',
+  },
+  jenkins: {
+    element: <Jenkins />,
+    link: 'https://www.jenkins.io/',
+    name: 'Jenkins',
+  },
+  mongo: {
+    element: <Mongo />,
+    link: 'https://www.mongodb.com/ko-kr',
+    name: 'MongoDB',
   }
-}
+};
+
+const getElement = (name: SkillType): ItemReturns => elements[name];
 
 export default function Skill({ skillName }: Props) {
   const { element, link, name } = getElement(skillName);
 
-  const handleOpenLink = () => {
-    if (link) {
-      window.open(link, '_blank');
-    }
-  };
+  if (!element) return null;
 
   return (
+    <a href={link}>
     <TooltipProvider>
       <Tooltip>
       <TooltipTrigger>
         <Card 
           className="flex gap-x-1 x-[42px] y-[42px] justify-center items-center px-2 py-1.5 w-fit rounded-full cursor-pointer" 
-          onClick={handleOpenLink}
         >
           {element}
         </Card>
@@ -291,6 +255,6 @@ export default function Skill({ skillName }: Props) {
       </TooltipContent>
       </Tooltip>
     </TooltipProvider>
+    </a>
   );
 }
-

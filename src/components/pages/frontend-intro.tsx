@@ -1,10 +1,9 @@
-'use client';
+import { ApplyButton } from "@/features/recruit";
 
-import { Skill } from "@/features/recruit";
-import { Button } from "@/shared/ui";
-import { openGoogleRecruitForm } from "@/shared/utils";
+import { FrontendSkills } from "@/features/recruit";
+import { Suspense } from "react";
 
-export default function PmIntroPage() {
+export default function FrontendIntroPage() {
 
   return (
     <aside className="grid grid-cols-1 gap-x-[60px] md:grid-cols-[70%_30%]">
@@ -38,44 +37,21 @@ export default function PmIntroPage() {
 
     <section className="mb-8">
       <h2 className="text-2xl font-bold mb-4">우리는 이런 도구를 사용해요</h2>
-      <div className="space-y-4">
-
-      <div className="flex items-center gap-x-2.5">
-          <span className="font-bold">업무 관리:</span>
-          <div className="flex gap-x-1">
-            <Skill skillName="jira" />
-          </div>
-        </div>  
-
-      <div className="flex items-center gap-x-2.5">
-          <span className="font-bold">문서 작성 및 관리:</span>
-          <div className="flex gap-x-1">
-            <Skill skillName="confluence" />
-            <Skill skillName="notion" />
-          </div>
-        </div>  
-
-        <div className="flex items-center gap-x-2.5">
-          <span className="font-bold">커뮤니케이션:</span>
-          <div className="flex gap-x-1">
-            <Skill skillName="slack" />
-          </div>
-        </div>    
-      </div>
+      <Suspense fallback={<>로딩 중..</>}>
+        <FrontendSkills />
+      </Suspense>
     </section>
 
     <section className="mb-8">
       <h2 className="text-2xl font-bold mb-4">함류하면 함께 할 업무에요</h2>
       <ul className="list-disc list-inside space-y-2 text-gray-700">
-        <li>프로덕트에 대해서 예산과 시간, 기술비용을 측정하고 기획해요.</li>
-        <li>프로덕트 일정을 관리하고 개발자와 고객 간 커뮤니케이션을 진행해요.</li>
-        <li>업무 관련 내용을 정리해요.</li>
+        <li>고객에게 수주받은 신규 제품을 개발하거나 유지보수해요.</li>
+        <li>개발팀 내 디자인시스템을 개발하고 문서화해요.</li>
+        <li>자체 솔루션의 신규 기능을 개발하고 유지보수해요.</li>
       </ul>
     </section>
     </article>
-      <Button onClick={openGoogleRecruitForm} className="min-w-[230px]" size="lg">
-        지원하기
-      </Button>
+      <ApplyButton />
     </aside>
   );
 }

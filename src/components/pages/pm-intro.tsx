@@ -1,10 +1,6 @@
-'use client';
+import { ApplyButton, Skill } from "@/features/recruit";
 
-import { Skill } from "@/features/recruit";
-import { Button } from "@/shared/ui";
-import { openGoogleRecruitForm } from "@/shared/utils";
-
-export default function BackendIntroPage() {
+export default function PmIntroPage() {
 
   return (
     <aside className="grid grid-cols-1 gap-x-[60px] md:grid-cols-[70%_30%]">
@@ -39,51 +35,26 @@ export default function BackendIntroPage() {
     <section className="mb-8">
       <h2 className="text-2xl font-bold mb-4">우리는 이런 도구를 사용해요</h2>
       <div className="space-y-4">
-        <div className="flex items-center gap-x-2.5">
-          <span className="font-bold">코어:</span>
-          <div className="flex gap-x-1">
-            <Skill skillName="spring" />
-            <Skill skillName="nodejs" />
-            <Skill skillName="typescript" />
-            <Skill skillName="java" />
-          </div>
-        </div>
-        <div className="flex items-center gap-x-2.5">
-          <span className="font-bold">데이터베이스 관리 및 개발:</span>
-          <div className="flex gap-x-1">
-            <Skill skillName="postgresql" />
-            <Skill skillName="mongo" />
-            <Skill skillName="redis" />
-            <Skill skillName="hibernate" />
-            <Skill skillName="prisma" />
-          </div>
-        </div>
 
-        <div className="flex items-center gap-x-2.5">
-          <span className="font-bold">CI/CD:</span>
+      <div className="flex items-center gap-x-2.5">
+          <span className="font-bold">업무 관리:</span>
           <div className="flex gap-x-1">
-            <Skill skillName="actions" />
-            <Skill skillName="jenkins" />
-          </div>
-        </div>
-        <div className="flex items-center gap-x-2.5">
-          <span className="font-bold">테스트:</span>
-          <div className="flex gap-x-1">
-            <span>JUnit,</span>
-            <span>Mockito,</span>
-            <span>Jest,</span>
-            <span>Postman,</span>
-            <span>Swagger</span>
+            <Skill skillName="jira" />
           </div>
         </div>  
 
-            <div className="flex items-center gap-x-2.5">
+      <div className="flex items-center gap-x-2.5">
+          <span className="font-bold">문서 작성 및 관리:</span>
+          <div className="flex gap-x-1">
+            <Skill skillName="confluence" />
+            <Skill skillName="notion" />
+          </div>
+        </div>  
+
+        <div className="flex items-center gap-x-2.5">
           <span className="font-bold">커뮤니케이션:</span>
           <div className="flex gap-x-1">
             <Skill skillName="slack" />
-            <Skill skillName="jira" />
-            <Skill skillName="confluence" />
-            <Skill skillName="notion" />
           </div>
         </div>    
       </div>
@@ -92,15 +63,13 @@ export default function BackendIntroPage() {
     <section className="mb-8">
       <h2 className="text-2xl font-bold mb-4">함류하면 함께 할 업무에요</h2>
       <ul className="list-disc list-inside space-y-2 text-gray-700">
-        <li>고객에게 수주받은 신규 제품을 개발하거나 유지보수해요.</li>
-        <li>데이터베이스 쿼리를 최적화하고 서버 자원을 관리해요.</li>
-        <li>자체 솔루션의 신규 기능을 개발하고 유지보수해요.</li>
+        <li>프로덕트에 대해서 예산과 시간, 기술비용을 측정하고 기획해요.</li>
+        <li>프로덕트 일정을 관리하고 개발자와 고객 간 커뮤니케이션을 진행해요.</li>
+        <li>업무 관련 내용을 정리해요.</li>
       </ul>
     </section>
     </article>
-      <Button onClick={openGoogleRecruitForm} className="min-w-[230px]" size="lg">
-        지원하기
-      </Button>
+    <ApplyButton />
     </aside>
   );
 }
