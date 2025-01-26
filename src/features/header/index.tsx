@@ -1,6 +1,7 @@
 'use client';
 
 import { Button } from "@/shared/ui";
+import { channelTalkUrl } from "@/shared/utils";
 import Image from "next/image";
 import { redirect } from "next/navigation";
 
@@ -20,7 +21,7 @@ export default function Header() {
         </div>
       </section>
       <section>
-        <Button onClick={() => window.open('https://2jdxd.channel.io/home', '_blank')}>
+        <Button onClick={() => window.open(channelTalkUrl, '_blank')}>
           문의하기
         </Button>
       </section>

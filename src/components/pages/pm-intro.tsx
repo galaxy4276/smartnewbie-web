@@ -18,7 +18,7 @@ export default function PmIntroPage() {
 
         <div className="py-2 gap-y-1.5 flex flex-col">
           <a className="underline text-slate-400" href="https://ruby-composer-6d2.notion.site/17d1bbec5ba1804db6e2fea787ba7402?pvs=4">스마트 뉴비팀에 대해 더 궁금하다면?</a>
-          <a className="underline text-slate-400" href="https://2jdxd.channel.io/home">직무에 대해 문의사항이 있나요?</a>
+          <a className="underline text-slate-400" href="https://smartnewb.channel.io/home">직무에 대해 문의사항이 있나요?</a>
         </div>
       </div>
     </section>
