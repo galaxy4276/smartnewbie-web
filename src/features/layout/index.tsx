@@ -34,8 +34,10 @@ export default function Layout({ children }: Props) {
         </div>
       </article>
 
-      <section className="flex-1 px-2 my-[58px] md:px-[146px]">
+      <section className="flex-1 px-4 my-[58px] flex justify-center w-full md:px-[142px]">
+        <article className="w-full md:max-w-[1400px]">
         {children}
+        </article>
       </section>
 
       <Footer />

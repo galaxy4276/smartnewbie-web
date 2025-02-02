@@ -3,8 +3,9 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0A1017] px-[24px] py-[32px] md:px-[146px] md:py-[48px]">
-    <div className="flex flex-col md:flex-row justify-between gap-8">
+    <footer className="bg-[#0A1017] flex w-full justify-center px-[24px] py-[32px] md:px-[146px] md:py-[48px]">
+      <article className="w-full max-w-full md:max-w-[1400px]">
+      <div className="flex flex-col md:flex-row justify-between gap-8">
       <div className="flex flex-col gap-4">
         <div className="flex items-center gap-2">
           <Image src="/images/header_logo.png" alt="header_logo.png" width={24} height={24} />
@@ -29,6 +30,8 @@ export default function Footer() {
     <div className="mt-8 text-sm text-gray-500">
       © 2025 스마트뉴비 All rights reserved.
     </div>
+      </article>
+
   </footer>
   );
 }
